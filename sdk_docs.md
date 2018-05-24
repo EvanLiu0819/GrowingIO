@@ -1,145 +1,104 @@
-控制文档
 
-  -------------------- --
-  当前版本号:          
-  作者&创建日期        
-  最新更新作者&日期:   
-  审核&审核日期:       
-  会签及日期           
-                       
-                       
-                       
-                       
-  批准人& 批准日期:    
-  -------------------- --
-
-文件更改履历
-
-+-----------------+-----------------+-----------------+-----------------+
-| 更新次数        | 更新日期        | 修订作者        | 主要修订摘要    |
-+-----------------+-----------------+-----------------+-----------------+
-|                 | 2018-4-9        | 陆梦飞          | 添加RN框架集成方式 |
-+-----------------+-----------------+-----------------+-----------------+
-|                 | 2018-5-2        | 陆梦飞          | 1.  安卓SDK版本由2.0 |
-|                 |                 |                 | .7升级为2.3.1，与线上版 |
-|                 |                 |                 | 本相同          |
-|                 |                 |                 |                 |
-|                 |                 |                 | 2.  ios由2.0.1升级 |
-|                 |                 |                 | 为2.3.1，与线上版本相同 |
-|                 |                 |                 |                 |
-|                 |                 |                 |                 |
-|                 |                 |                 | 3.  增加Android和I |
-|                 |                 |                 | OS的banner数据采集方法 |
-+-----------------+-----------------+-----------------+-----------------+
-|                 |                 |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-|                 |                 |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-|                 |                 |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-|                 |                 |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-
-**目录** {#目录 .TOC}
+**目录**
 ========
 
-[[1]{.underline} [获取项目ID和URL Scheme]{.underline}
+[[1] [获取项目ID和URL Scheme]
 3](#获取项目id和url-scheme)
 
-[[1.1]{.underline} [添加应用]{.underline} 3](#添加应用)
+[[1.1] [添加应用] 3](#添加应用)
 
-[[1.2]{.underline} [获取项目ID和URL Scheme]{.underline}
+[[1.2] [获取项目ID和URL Scheme]
 3](#获取项目id和url-scheme-1)
 
-[[2]{.underline} [集成SDK]{.underline} 4](#集成sdk)
+[[2] [集成SDK] 4](#集成sdk)
 
-[[2.1]{.underline} [网站集成]{.underline} 4](#网站集成)
+[[2.1] [网站集成] 4](#网站集成)
 
-[[2.1.1]{.underline} [代码集成]{.underline} 4](#代码集成)
+[[2.1.1] [代码集成] 4](#代码集成)
 
-[[2.1.2]{.underline} [重要配置选项]{.underline} 5](#重要配置选项)
+[[2.1.2] [重要配置选项] 5](#重要配置选项)
 
-[[2.2]{.underline} [IOS集成]{.underline} 5](#_Toc505547646)
+[[2.2] [IOS集成] 5](#_Toc505547646)
 
-[[2.2.1]{.underline} [准备最新IOS SDK]{.underline} 5](#准备最新ios-sdk)
+[[2.2.1] [准备最新IOS SDK] 5](#准备最新ios-sdk)
 
-[[2.2.2]{.underline} [导入SDK包]{.underline} 5](#导入sdk包)
+[[2.2.2] [导入SDK包] 5](#导入sdk包)
 
-[[2.2.3]{.underline} [在build phases中添加依赖]{.underline}
+[[2.2.3] [在build phases中添加依赖]
 6](#在build-phases中添加依赖)
 
-[[2.2.4]{.underline} [添加编译参数]{.underline} 7](#添加编译参数)
+[[2.2.4] [添加编译参数] 7](#添加编译参数)
 
-[[2.2.5]{.underline} [在AppDelegate.m添加集成代码]{.underline}
+[[2.2.5] [在AppDelegate.m添加集成代码]
 7](#在appdelegate.m添加集成代码)
 
-[[2.2.6]{.underline} [添加URL scheme]{.underline} 8](#添加url-scheme)
+[[2.2.6] [添加URL scheme] 8](#添加url-scheme)
 
-[[2.2.7]{.underline} [添加激活圈选代码]{.underline}
+[[2.2.7] [添加激活圈选代码]
 8](#添加激活圈选代码)
 
-[[2.3]{.underline} [Android集成]{.underline} 9](#android集成)
+[[2.3] [Android集成] 9](#android集成)
 
-[[2.3.1]{.underline} [导入SDK]{.underline} 9](#导入sdk)
+[[2.3.1] [导入SDK] 9](#导入sdk)
 
-[[2.3.2]{.underline} [添加插件、依赖和对应资源]{.underline}
+[[2.3.2] [添加插件、依赖和对应资源]
 9](#添加插件依赖和对应资源)
 
-[[2.3.3]{.underline} [添加URL scheme]{.underline} 10](#添加url-scheme-1)
+[[2.3.3] [添加URL scheme] 10](#添加url-scheme-1)
 
-[[2.3.4]{.underline} [修改app.java文件]{.underline}
+[[2.3.4] [修改app.java文件]
 12](#修改app.java文件)
 
-[[2.3.5]{.underline} [修改MainActivity.java文件]{.underline}
+[[2.3.5] [修改MainActivity.java文件]
 13](#修改mainactivity.java文件)
 
-[[2.3.6]{.underline} [代码混淆]{.underline} 13](#代码混淆)
+[[2.3.6] [代码混淆] 13](#代码混淆)
 
-[[2.4]{.underline} [Android cordova 集成]{.underline}
+[[2.4] [Android cordova 集成]
 14](#ios-cordova-集成)
 
-[[2.4.1]{.underline} [添加cordova插件]{.underline} 14](#添加cordova插件)
+[[2.4.1] [添加cordova插件] 14](#添加cordova插件)
 
-[[2.4.2]{.underline} [导入SDK]{.underline} 14](#导入sdk-1)
+[[2.4.2] [导入SDK] 14](#导入sdk-1)
 
-[[2.4.3]{.underline} [修改BUILD.GRADLE文件]{.underline}
+[[2.4.3] [修改BUILD.GRADLE文件]
 15](#修改build.gradle文件)
 
-[[2.4.4]{.underline} [修改AndroidManifest.xml文件]{.underline}
+[[2.4.4] [修改AndroidManifest.xml文件]
 15](#修改androidmanifest.xml文件)
 
-[[2.4.5]{.underline} [修改app.java文件]{.underline}
+[[2.4.5] [修改app.java文件]
 17](#修改app.java文件-1)
 
-[[2.4.6]{.underline} [配置cordova]{.underline} 18](#配置cordova)
+[[2.4.6] [配置cordova] 18](#配置cordova)
 
-[[3]{.underline} [检测数据]{.underline} 19](#检测数据)
+[[3] [检测数据] 19](#检测数据)
 
-[[3.1]{.underline} [检测SDK安装状态]{.underline} 19](#检测sdk安装状态)
+[[3.1] [检测SDK安装状态] 19](#检测sdk安装状态)
 
-[[3.2]{.underline} [完成安装]{.underline} 19](#完成安装)
+[[3.2] [完成安装] 19](#完成安装)
 
-[[3.3]{.underline} [查看数据]{.underline} 20](#查看数据)
+[[3.3] [查看数据] 20](#查看数据)
 
-[[4]{.underline} [上传登陆用户ID]{.underline} 21](#上传登陆用户id)
+[[4] [上传登陆用户ID] 21](#上传登陆用户id)
 
-[[4.1]{.underline} [后台配置]{.underline} 21](#后台配置)
+[[4.1] [后台配置] 21](#后台配置)
 
-[[4.2]{.underline} [代码实施]{.underline} 22](#代码实施)
+[[4.2] [代码实施] 22](#代码实施)
 
-[[4.2.1]{.underline} [Web端]{.underline} 22](#web端)
+[[4.2.1] [Web端] 22](#web端)
 
-[[4.2.2]{.underline} [Android端]{.underline} 22](#android端)
+[[4.2.2] [Android端] 22](#android端)
 
-[[4.2.3]{.underline} [IOS 端]{.underline} 23](#ios-端)
+[[4.2.3] [IOS 端] 23](#ios-端)
 
-[[4.3]{.underline} [在图表中验证数据有效性]{.underline}
+[[4.3] [在图表中验证数据有效性]
 23](#在图表中验证数据有效性)
 
 获取项目ID和URL Scheme
 ======================
 
-对接前，请先联系系统管理员刘钊（liuzhao17\@haier.com）和陆梦飞（lumengfei\@haier.com）创建项目和账号，登录udg.haier.net。
+集成前，请向项目管理员申请登陆账号
 
 添加应用
 --------
@@ -168,30 +127,9 @@
 将以下代码放入需要网站页面统一的\<head\>\</head\>标签中，安装成功后，除
 localhost 和 IP 地址外，所有网址下的行为数据都将会被收集。
 
-\<script type=\'text/javascript\'\>
-
-!function(e,t,n,g,i){e\[i\]=e\[i\]\|\|function(){(e\[i\].q=e\[i\].q\|\|\[\]).push(arguments)},n=t.createElement(\"script\"),tag=t.getElementsByTagName(\"script\")\[0\],n.async=1,n.src=(\'https:\'==document.location.protocol?\'https://\':\'http://\')+g,tag.parentNode.insertBefore(n,tag)}(window,document,\"script\",\"assets.growingio.com/op/2.0/gio.js\",\"gio\");
-
-gio(\'init\', \'96a848cc38c178cd\',
-\#\#需要将此处项目ID修改为您的对应项目的ID，项目ID可以在添加应用的页面可以获得
-
-{\'setImp\':false,
-
-//更新前为\'setImp\':\'false\', 更新不会对数据采集造成影响
-
-\'setTrackerHost\':\'vds.haier.net:443\',
-
-\'setTrackerScheme\':\'https\',
-
-\'setOrigin\': \'https://udg.haier.net\'
-
-});
-
-//put your custom page code here
-
-gio(\'send\');
-
-\</script\>
+```
+<script type='text/javascript'>!function(e,t,n,g,i){e[i]=e[i]||function(){(e[i].q=e[i].q||[]).push(arguments)},n=t.createElement("script"),tag=t.getElementsByTagName("script")[0],n.async=1,n.src=('https:'==document.location.protocol?'https://':'http://')+g,tag.parentNode.insertBefore(n,tag)}(window,document,"script","assets.growingio.com/op/2.0/gio.js","gio");  gio('init', '96a848cc38c178cd',  ##需要将此处项目ID修改为您的对应项目的ID，项目ID可以在添加应用的页面可以获得  {'setImp':false,//更新前为'setImp':'false', 更新不会对数据采集造成影响   'setTrackerHost':'vds.growingio.com:443',    'setTrackerScheme':'https',   'setOrigin': 'https://gio.growingio.com'  });  //put your custom page code here  gio('send');</script>
+```
 
 -   注意：确保项目ID设置无误。
 
@@ -199,14 +137,14 @@ gio(\'send\');
 
 允许页面以 iframe 形式加载：
 
-在 UDG 平台上使用可视化圈选指标功能需要使用 iframe
+在 GrowingIO 平台上使用可视化圈选指标功能需要使用 iframe
 来加载目标页面。如果您的网站禁止了以 iframe
 形式加载，就无法正常使用圈选功能定义指标，需要设置允许以 iframe
 形式加载。
 
-将服务器端配置修改成X-Frame-Options: Allow-From http://udg.haier.net，\
+将服务器端配置修改成X-Frame-Options: Allow-From http://gio.growingio.com，\
 如果您的网站是 https ，请使用X-Frame-Options: Allow-From
-https://udg.haier.net 。
+https://gio.growingio.com 。
 
 IOS集成
 -------
@@ -214,7 +152,7 @@ IOS集成
 ### 准备最新IOS SDK
 
 点击下载[*[iOS
-SDK]{.underline}*](http://assets.growingio.com/sdk/GrowingIO-iOS-SDK-2.3.1.zip)
+SDK]*](http://assets.growingio.com/sdk/GrowingIO-iOS-SDK-2.3.1.zip)
 
 ### 导入SDK包
 
@@ -237,33 +175,9 @@ height="3.647107392825897in"}
 height="1.571266404199475in"}
 
 ### 在AppDelegate.m添加集成代码
-
-\#import \"Growing.h\"
-
-\...
-
-\- (BOOL)application:(UIApplication \*)application
-didFinishLaunchingWithOptions:(NSDictionary \*)launchOptions {
-
-\...
-
-\[Growing startWithAccountId:@\"96a848cc38c178cd\"\];// 改成对应项目ID
-
-\[Growing setImp:NO\];
-
-\[Growing setTrackerHost:@\"https://vds.haier.net\"\];
-
-\[Growing setDataHost:@\"https://udg.haier.net\"\];
-
-\[Growing setGtaHost:@\"https://gta.haier.net\"\];
-
-\[Growing
-setHybridJSSDKUrlPrefix:@\"https://assets.growingio.com/sdk/hybrid/1.0\"\];
-
-\[Growing setEnableLog:YES\]; // 开启调试日志 可以开启日志
-
-}
-
+```
+#import "Growing.h"...- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {        ...        [Growing startWithAccountId:@"96a848cc38c178cd"];// 改成对应项目ID        [Growing setImp:NO];        [Growing setTrackerHost:@"https://vds.growingio.com"]; //修改为vds域名        [Growing setDataHost:@"https://gio.growingio.com"];  //修改为主域名        [Growing setGtaHost:@"https://gta.growingio.com"];  //修改为gta域名        [Growing setHybridJSSDKUrlPrefix:@"https://assets.growingio.com/sdk/hybrid/1.0"];        [Growing setEnableLog:YES];  // 开启调试日志 可以开启日志}
+```
 ### 添加URL scheme
 
 ![](media/image10.png){width="6.339583333333334in"
@@ -275,21 +189,9 @@ height="2.6569444444444446in"}
 handleUrl:url\] 并没有被调用。请在各个平台上调试这段代码，确保当App被URL
 scheme唤醒之后，该函数能被调用到。
 
-\- (BOOL)application:(UIApplication \*)application openURL:(NSURL \*)url
-sourceApplication:(NSString \*)sourceApplication
-annotation:(id)annotation {
-
-if (\[Growing handleUrl:url\]) // 请务必确保该函数被调用
-
-{
-
-return YES;
-
-}
-
-return NO;
-
-}
+```
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {    if ([Growing handleUrl:url]) // 请务必确保该函数被调用    {        return YES;    }    return NO;    }
+```
 
 ### 重要配置项
 
@@ -297,11 +199,10 @@ return NO;
 
 很多应用上方都有横向滚动的Banner广告。对于这样的广告，如果要收集数据，请在响应点击的控件上添加如下代码
 
-UIView \*view;
+```
+UIView *view;…view.growingAttributesValue = 广告的唯一ID;
+```
 
-...
-
-view.growingAttributesValue = 广告的唯一ID;
 
 其中view是您的广告元素，请确保两点：
 
@@ -311,11 +212,9 @@ view.growingAttributesValue = 广告的唯一ID;
 
 例如，当您的横向滚动广告共有3张广告图时，您可以在3个响应点击的View上分别设置不同的广告唯一ID，类似如下效果：
 
-view1.growingAttributesValue = @"ad1";
-
-view2.growingAttributesValue = @"ad2";
-
-view3.growingAttributesValue = @"ad3";
+```
+view1.growingAttributesValue = @“ad1”;view2.growingAttributesValue = @“ad2”;view3.growingAttributesValue = @“ad3”;
+```
 
 此外，当您想采集一些可能没有文字的控件（比如UIImageView，UIView）时，也可以给属性growingAttributesValue赋值作为文字，用来在圈选的时候区分不同的内容。
 
@@ -326,106 +225,19 @@ Android集成
 
 在 project 级别的 build.gradle 文件中添加 vds-gradle-plugin 依赖：
 
-buildscript {
-
-repositories {
-
-jcenter()
-
-}
-
-dependencies {
-
-classpath \'com.android.tools.build:gradle:3.0.1\'
-
-classpath \'com.growingio.android:vds-gradle-plugin:OP-2.3.1\'
-
-//2018-05-02升级，升级前版本为2.0.7
-
-// NOTE: Do not place your application dependencies here; they belong
-
-// in the individual module build.gradle files
-
-}
-
-}
-
+```
+    buildscript {            repositories {                jcenter()            }            dependencies {                classpath 'com.android.tools.build:gradle:3.0.1'                classpath 'com.growingio.android:vds-gradle-plugin:OP-2.3.1'//2018-05-02升级，升级前版本为2.0.7                // NOTE: Do not place your application dependencies here; they belong                // in the individual module build.gradle files            }    }
+```
 ### 添加插件、依赖和对应资源
 
 在 module 级别的 build.gradle 文件中添加 com.growingio.android
 插件、vds-android-agent 依赖和对应的资源：
 
-apply plugin: \'com.android.application\'
-
-apply plugin: \'com.growingio.android\'
-
-android {
-
-compileSdkVersion 26
-
-buildToolsVersion \"26.0.0\"
-
-defaultConfig {
-
-applicationId \"com.example.wenke.gioeesdkandroiddemo\"
-
-minSdkVersion 15
-
-targetSdkVersion 26
-
-versionCode 1
-
-versionName \"1.0\"
-
-testInstrumentationRunner
-\"android.support.test.runner.AndroidJUnitRunner\"
-
-resValue(\"string\", \"growingio\_project\_id\", \"96a848cc38c178cd\")
-
-resValue(\"string\", \"growingio\_url\_scheme\",
-\"growing.34b72609d4551902\")
-
-}//更改为对应的项目ID和URL scheme
-
-buildTypes {
-
-release {
-
-minifyEnabled false
-
-proguardFiles getDefaultProguardFile(\'proguard-android.txt\'),
-\'proguard-rules.pro\'
-
-}
-
-}
-
-}
-
-dependencies {
-
-compile fileTree(dir: \'libs\', include: \[\'\*.jar\'\])
-
-androidTestCompile(\'com.android.support.test.espresso:espresso-core:2.2.2\',
-{
-
-exclude group: \'com.android.support\', module: \'support-annotations\'
-
-})
-
-compile \'com.android.support:appcompat-v7:26.+\'
-
-compile \'com.android.support.constraint:constraint-layout:1.0.2\'
-
-testCompile \'junit:junit:4.12\'
-
-compile \'com.growingio.android:vds-android-agent:OP-2.3.1\@aar\'
-
-//更新前：compile
-\'com.growingio.android:vds-android-agent:OP-2.0.7\@aar\'
-
-}
-
+```
+apply plugin: 'com.android.application'apply plugin: 'com.growingio.android'android {    compileSdkVersion 26    buildToolsVersion "26.0.0"    defaultConfig {        applicationId "com.example.wenke.gioeesdkandroiddemo"        minSdkVersion 15        targetSdkVersion 26        versionCode 1        versionName "1.0"        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"        resValue("string", "growingio_project_id", "96a848cc38c178cd")        resValue("string", "growingio_url_scheme", "growing.34b72609d4551902")    }//更改为对应的项目ID和URL scheme    buildTypes {        release {            minifyEnabled false            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'        }    }}dependencies {    compile fileTree(dir: 'libs', include: ['*.jar'])    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {        exclude group: 'com.android.support', module: 'support-annotations'    })    compile 'com.android.support:appcompat-v7:26.+'    compile 'com.android.support.constraint:constraint-layout:1.0.2'testCompile 'junit:junit:4.12'	compile 'com.growingio.android:vds-android-agent:OP-2.3.1@aar'
+	
+	//更新前：compile 'com.growingio.android:vds-android-agent:OP-2.0.7@aar'}
+```
 -   确保URL scheme、项目ID和 SDK的版本准确。
 
 ### 添加URL scheme
@@ -434,63 +246,9 @@ compile \'com.growingio.android:vds-android-agent:OP-2.3.1\@aar\'
 Scheme添加到您的项目，以便我们唤醒您的程序，进行圈选。将该产品的URLScheme添加到你的AndroidManifest.xml中的LAUNCHER
 Activity下。例如
 
-\<?xml version=\"1.0\" encoding=\"utf-8\"?\>
-
-\<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"
-package=\"com.example.wenke.gioeesdkandroiddemo\"\>
-
-\<uses-permission
-android:name=\"android.permission.SYSTEM\_ALERT\_WINDOW\"/\>
-
-\<uses-permission android:name=\"android.permission.INTERNET\"/\>
-
-\<uses-permission
-android:name=\"android.permission.ACCESS\_NETWORK\_STATE\"/\>
-
-\<application
-
-android:name=\".App\"
-
-android:allowBackup=\"true\"
-
-android:icon=\"\@mipmap/ic\_launcher\"
-
-android:label=\"\@string/app\_name\"
-
-android:roundIcon=\"\@mipmap/ic\_launcher\_round\"
-
-android:supportsRtl=\"true\"
-
-android:theme=\"\@style/AppTheme\"\>
-
-\<activity android:name=\".MainActivity\"\>
-
-\<intent-filter\>
-
-\<action android:name=\"android.intent.action.MAIN\" /\>
-
-\<category android:name=\"android.intent.category.LAUNCHER\" /\>
-
-\</intent-filter\>
-
-\<intent-filter\>
-
-\<data android:scheme=\"growing.a62ec2138e951a64\"/\>//改为对应项目的URL
-scheme
-
-\<action android:name=\"android.intent.action.VIEW\"/\>
-
-\<category android:name=\"android.intent.category.DEFAULT\"/\>
-
-\<category android:name=\"android.intent.category.BROWSABLE\"/\>
-
-\</intent-filter\>
-
-\</activity\>
-
-\</application\>
-
-\</manifest\>
+```
+<?xml version="1.0" encoding="utf-8"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.example.wenke.gioeesdkandroiddemo"><uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/><uses-permission android:name="android.permission.INTERNET"/><uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/><application    android:name=".App"    android:allowBackup="true"    android:icon="@mipmap/ic_launcher"    android:label="@string/app_name"    android:roundIcon="@mipmap/ic_launcher_round"    android:supportsRtl="true"    android:theme="@style/AppTheme">    <activity android:name=".MainActivity">        <intent-filter>            <action android:name="android.intent.action.MAIN" />            <category android:name="android.intent.category.LAUNCHER" />        </intent-filter>        <intent-filter>            <data android:scheme="growing.a62ec2138e951a64"/>//改为对应项目的URL scheme            <action android:name="android.intent.action.VIEW"/>            <category android:name="android.intent.category.DEFAULT"/>            <category android:name="android.intent.category.BROWSABLE"/>        </intent-filter>    </activity></application></manifest>
+```
 
 -   请添加一整个 intent-filter 区块，并确保其中只有一个 data 字段
 
@@ -500,161 +258,24 @@ scheme
 
 在app.java中添加以下代码：
 
-package com.example.wenke.gioeesdkandroiddemo;
-
-import android.app.Application;
-
-import com.growingio.android.sdk.collection.Configuration;
-
-import com.growingio.android.sdk.collection.GConfig;
-
-import com.growingio.android.sdk.collection.GrowingIO;
-
-import com.growingio.android.sdk.utils.LogUtil;
-
-/\*\*
-
-\* Created by wenke on 2017/12/8.
-
-\*/
-
-public class App extends Application {
-
-\@Override
-
-public void onCreate() {
-
-super.onCreate();
-
-GrowingIO.startWithConfiguration(this, new Configuration()
-
-// .setDisableImpression(true)
-
-.useID()
-
-.trackAllFragments()
-
-.setTestMode(true)
-
-.setDebugMode(true)
-
-.setChannel(\"optest\")
-
-.setTrackerHost(\"https://vds.haier.net\") // marathon external\_lb
-
-.setDataHost(\"https://udg.haier.net\")
-
-.setGtaHost(\"https://gta.haier.net\")
-
-.setHybridJSSDKUrlPrefix(\"https://assets.growingio.com/sdk/hybrid\")
-
-);
-
-LogUtil.i(\"GIO\", \"APP \");
-
-}
-
-}
-
+```
+package com.example.wenke.gioeesdkandroiddemo;import android.app.Application;import com.growingio.android.sdk.collection.Configuration;import com.growingio.android.sdk.collection.GConfig;import com.growingio.android.sdk.collection.GrowingIO;import com.growingio.android.sdk.utils.LogUtil;/*** Created by wenke on 2017/12/8.*/public class App extends Application {@Overridepublic void onCreate() {    super.onCreate();    GrowingIO.startWithConfiguration(this, new Configuration()//                .setDisableImpression(true)            .useID()            .trackAllFragments()            .setTestMode(true)            .setDebugMode(true)            .setChannel("optest")            .setTrackerHost("https://vds.growingio.com")  // vds域名            .setDataHost("https://gio.growingio.com") // 前端主域名            .setGtaHost("https://gta.growingio.com")  //gta域名            .setHybridJSSDKUrlPrefix("https://assets.growingio.com/sdk/hybrid")    );    LogUtil.i("GIO", "APP ");}}
+```
 ### 修改MainActivity.java文件
 
 在MainActivity.java中添加以下代码：
 
-package com.example.wenke.gioeesdkandroiddemo;
-
-import android.support.v7.app.AppCompatActivity;
-
-import android.os.Bundle;
-
-import android.util.Log;
-
-import android.view.View;
-
-import android.widget.Button;
-
-import android.widget.Toast;
-
-public class MainActivity extends AppCompatActivity {
-
-\@Override
-
-protected void onCreate(Bundle savedInstanceState) {
-
-super.onCreate(savedInstanceState);
-
-setContentView(R.layout.activity\_main);
-
-Button button1 = (Button) findViewById(R.id.button1);
-
-button1.setOnClickListener(new View.OnClickListener() {
-
-\@Override
-
-public void onClick(View view) {
-
-Log.d(\"click\",\"点击了button1\");
-
-Toast.makeText(MainActivity.this, \"click button1\",
-Toast.LENGTH\_SHORT).show();
-
-}
-
-});
-
-}
-
-}
+```
+package com.example.wenke.gioeesdkandroiddemo;import android.support.v7.app.AppCompatActivity;import android.os.Bundle;import android.util.Log;import android.view.View;import android.widget.Button;import android.widget.Toast;public class MainActivity extends AppCompatActivity {    @Override    protected void onCreate(Bundle savedInstanceState) {        super.onCreate(savedInstanceState);        setContentView(R.layout.activity_main);        Button button1 = (Button) findViewById(R.id.button1);        button1.setOnClickListener(new View.OnClickListener() {            @Override            public void onClick(View view) {                Log.d("click","点击了button1");                Toast.makeText(MainActivity.this, "click button1", Toast.LENGTH_SHORT).show();            }        });    }
+```
 
 ### 代码混淆
 
 如果你启用了混淆，请在你的proguard-rules.pro中加入如下代码：
 
--keep class com.growingio.android.sdk.\*\* {
-
-\*;
-
-}
-
--dontwarn com.growingio.android.sdk.\*\*
-
--keepnames class \* extends android.view.View
-
--keep class \* extends android.app.Fragment {
-
-public void setUserVisibleHint(boolean);
-
-public void onHiddenChanged(boolean);
-
-public void onResume();
-
-public void onPause();
-
-}
-
--keep class android.support.v4.app.Fragment {
-
-public void setUserVisibleHint(boolean);
-
-public void onHiddenChanged(boolean);
-
-public void onResume();
-
-public void onPause();
-
-}
-
--keep class \* extends android.support.v4.app.Fragment {
-
-public void setUserVisibleHint(boolean);
-
-public void onHiddenChanged(boolean);
-
-public void onResume();
-
-public void onPause();
-
-}
-
+```
+-keep class com.growingio.android.sdk.** {    *;}-dontwarn com.growingio.android.sdk.**-keepnames class * extends android.view.View-keep class * extends android.app.Fragment {    public void setUserVisibleHint(boolean);    public void onHiddenChanged(boolean);    public void onResume();    public void onPause();}-keep class android.support.v4.app.Fragment {    public void setUserVisibleHint(boolean);    public void onHiddenChanged(boolean);    public void onResume();    public void onPause();}-keep class * extends android.support.v4.app.Fragment {    public void setUserVisibleHint(boolean);    public void onHiddenChanged(boolean);    public void onResume();    public void onPause();}
+```
 ### 重要配置项
 
 2.3.7.1采集广告banner数据
@@ -678,12 +299,15 @@ IOS cordova 集成
 
 ios cordova集成参照ios的集成方式
 
+
 Android cordova 集成
 --------------------
 
 ### 添加cordova插件
 
+```
 cordova plugin add cordova-growingio-plugin
+```
 
 注意：cordova-growing-plugin依赖cordova.5.0.0以上，目前不支持低版本。
 
@@ -691,270 +315,40 @@ cordova plugin add cordova-growingio-plugin
 
 ANDROID/BUILD.GRADLE文件添加
 
-buildscript {
-
-repositories {
-
-jcenter()
-
-}
-
-dependencies {
-
-classpath \'com.android.tools.build:gradle:1.5.0\'
-
-classpath \'com.growingio.android:vds-gradle-plugin:2.1.0\'
-
-}
-
-}
-
-allprojects {
-
-repositories {
-
-jcenter()
-
-}
-
-}
-
+```
+buildscript {  repositories {    jcenter()  }  dependencies {    classpath 'com.android.tools.build:gradle:1.5.0'    classpath 'com.growingio.android:vds-gradle-plugin:2.1.0' //sdk版本  }}allprojects {  repositories {    jcenter()  }}
+```
 注意高亮部分的sdk版本
 
 ### 修改BUILD.GRADLE文件
 
 找到ANDROID/APP/BUILD.GRADLE文件加入以下代码
 
-apply plugin: \'com.android.application\'
-
-apply plugin: \'com.growingio.android\'
-
-android {
-
-defaultConfig {
-
-resValue(\"string\", \"growingio\_project\_id\", \"96a848cc38c178cd\")
-
-resValue(\"string\", \"growingio\_url\_scheme\",
-\"growing.a62ec2138e951a64\")
-
-}//更改为对应的项目ID和URL scheme
-
-}
-
-dependencies {
-
-compile \'com.growingio.android:vds-android-agent:2.1.0\@aar\'
-
-}
-
+```
+apply plugin: 'com.android.application'apply plugin: 'com.growingio.android'android {   defaultConfig {      resValue("string", "growingio_project_id", "96a848cc38c178cd")      resValue("string", "growingio_url_scheme", "growing.a62ec2138e951a64")   }//更改为对应的项目ID和URL scheme}dependencies {    compile 'com.growingio.android:vds-android-agent:2.1.0@aar'}
+```
 ### 修改AndroidManifest.xml文件
 
 在AndroidManifest.xml文件添加以下代码：
 
-\<?xml version=\"1.0\" encoding=\"utf-8\"?\>
-
-\<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"
-package=\"com.example.wenke.gioeesdkandroiddemo\"\>
-
-\<uses-permission
-android:name=\"android.permission.SYSTEM\_ALERT\_WINDOW\"/\>
-
-\<uses-permission android:name=\"android.permission.INTERNET\"/\>
-
-\<uses-permission
-android:name=\"android.permission.ACCESS\_NETWORK\_STATE\"/\>
-
-\<application
-
-android:name=\".App\"
-
-android:allowBackup=\"true\"
-
-android:icon=\"\@mipmap/ic\_launcher\"
-
-android:label=\"\@string/app\_name\"
-
-android:roundIcon=\"\@mipmap/ic\_launcher\_round\"
-
-android:supportsRtl=\"true\"
-
-android:theme=\"\@style/AppTheme\"\>
-
-\<activity android:name=\".MainActivity\"\>
-
-\<intent-filter\>
-
-\<action android:name=\"android.intent.action.MAIN\" /\>
-
-\<category android:name=\"android.intent.category.LAUNCHER\" /\>
-
-\</intent-filter\>
-
-\<intent-filter\>
-
-\<data android:scheme=\"growing.a62ec2138e951a64\"/\>
-
-//修改为对应的URL scheme
-
-\<action android:name=\"android.intent.action.VIEW\"/\>
-
-\<category android:name=\"android.intent.category.DEFAULT\"/\>
-
-\<category android:name=\"android.intent.category.BROWSABLE\"/\>
-
-\</intent-filter\>
-
-\</activity\>
-
-\</application\>
-
-\</manifest\>
+```
+<?xml version="1.0" encoding="utf-8"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.example.wenke.gioeesdkandroiddemo"><uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/><uses-permission android:name="android.permission.INTERNET"/><uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/><application    android:name=".App"    android:allowBackup="true"    android:icon="@mipmap/ic_launcher"    android:label="@string/app_name"    android:roundIcon="@mipmap/ic_launcher_round"    android:supportsRtl="true"    android:theme="@style/AppTheme">    <activity android:name=".MainActivity">        <intent-filter>            <action android:name="android.intent.action.MAIN" />            <category android:name="android.intent.category.LAUNCHER" />        </intent-filter>        <intent-filter>            <data android:scheme="growing.a62ec2138e951a64"/>//修改为对应的URL scheme            <action android:name="android.intent.action.VIEW"/>            <category android:name="android.intent.category.DEFAULT"/>            <category android:name="android.intent.category.BROWSABLE"/>        </intent-filter>    </activity></application></manifest>
+```
 
 ### 修改app.java文件
 
 在app.java添加以下代码
 
-package com.example.wenke.gioeesdkandroiddemo;
-
-import android.app.Application;
-
-import com.growingio.android.sdk.collection.Configuration;
-
-import com.growingio.android.sdk.collection.GConfig;
-
-import com.growingio.android.sdk.collection.GrowingIO;
-
-import com.growingio.android.sdk.utils.LogUtil;
-
-/\*\*
-
-\* Created by wenke on 2017/12/8.
-
-\*/
-
-public class App extends Application {
-
-\@Override
-
-public void onCreate() {
-
-super.onCreate();
-
-GrowingIO.startWithConfiguration(this, new Configuration()
-
-// .setDisableImpression(true)
-
-.useID()
-
-.trackAllFragments()
-
-.setTestMode(true)
-
-.setDebugMode(true)
-
-.setChannel(\"optest\")
-
-.setTrackerHost(\"https://vds.haier.net\") // marathon external\_lb
-
-.setDataHost(\"https://udg.haier.net\")
-
-.setGtaHost(\"https://gta.haier.net:8443\")
-
-.setHybridJSSDKUrlPrefix(\"https://assets.growingio.com/sdk/hybrid\")
-
-);
-
-LogUtil.i(\"GIO\", \"APP \");
-
-}
-
-}
-
+```
+ackage com.example.wenke.gioeesdkandroiddemo;import android.app.Application;import com.growingio.android.sdk.collection.Configuration;import com.growingio.android.sdk.collection.GConfig;import com.growingio.android.sdk.collection.GrowingIO;import com.growingio.android.sdk.utils.LogUtil;/*** Created by wenke on 2017/12/8.*/public class App extends Application {@Overridepublic void onCreate() {    super.onCreate();    GrowingIO.startWithConfiguration(this, new Configuration()//                .setDisableImpression(true)            .useID()            .trackAllFragments()            .setTestMode(true)            .setDebugMode(true)            .setChannel("optest")            .setTrackerHost("https://vds.growingio.com")  // vds域名            .setDataHost("https://gio.growingio.com") // 前端主域名            .setGtaHost("https://gta.growingio.com") // gta域名            .setHybridJSSDKUrlPrefix("https://assets.growingio.com/sdk/hybrid")    );    LogUtil.i("GIO", "APP ");}}
+```
 ### 配置cordova
 
 当应用程序打开时，需要初始化会话并启动采集功能。所以，在deviceready或者resume事件触发时，可以通过下列方式初始化会话。
 
-// sample index.js
-
-var app = {
-
-initialize: function() {
-
-this.bindEvents();
-
-},
-
-bindEvents: function() {
-
-document.addEventListener(\'deviceready\', this.onDeviceReady, false);
-
-document.addEventListener(\'resume\', this.onDeviceResume, false);
-
-},
-
-onDeviceReady: function() {
-
-app.initGrowingIO();
-
-},
-
-onDeviceResume: function() {
-
-app.initGrowingIO();
-
-},
-
-initGrowingIO: function() {
-
-// 初始化
-
-try {
-
-var gio =
-window.cordova.require(\'cordova-plugin-growingio.GrowingIO\');
-
-var onSucc = function(msg) {
-
-alert(msg);
-
-};
-
-var onFail = function(msg) {
-
-alert(msg);
-
-};
-
-gio.init(\'96a848cc38c178cd\',
-
-{
-
-channel: \'员工端下载\',
-
-trackerHost:\'https://vds.haier.net\',
-
-dataHost:\'https://udg.haier.net\',
-
-gtaHost:\'https://gta.haier.net\',
-
-hybridJSSDKUrlPrefix:\'https://assets.growingio.com/sdk/hybrid\'
-
-},
-
-onSucc,
-
-onFail);
-
-} catch(err) {
-
-handleException(err);
-
-}
-
-}
-
-};
+```
+// sample index.js  var app = {    initialize: function() {      this.bindEvents();    },    bindEvents: function() {      document.addEventListener('deviceready', this.onDeviceReady, false);      document.addEventListener('resume', this.onDeviceResume, false);    },    onDeviceReady: function() {      app.initGrowingIO();    },    onDeviceResume: function() {      app.initGrowingIO();    },    initGrowingIO: function() {      // 初始化      try {        var gio = window.cordova.require('cordova-plugin-growingio.GrowingIO');        var onSucc = function(msg) {          alert(msg);        };        var onFail = function(msg) {          alert(msg);        };        gio.init('96a848cc38c178cd',                {                    channel: '员工端下载',                    trackerHost:'https://vds.growingio.com', //vds域名                    dataHost:'https://gio.growingio.com', // 前端主域名                    gtaHost:'https://gta.growingio.com',  //gta域名       hybridJSSDKUrlPrefix:'https://assets.growingio.com/sdk/hybrid'                },                 onSucc,                 onFail);      } catch(err) {        handleException(err);      }    }  };
+```
 
 React Native SDK 集成
 ---------------------
@@ -965,12 +359,9 @@ react-native-growingio 用于RN开发者手动发送数据。
 
 ### 引入
 
-npm install \--save
-https://github.com/growingio/react-native-growingio.git
-
-npm install
-
-react-native link react-native-growingio
+```
+npm install --save https://github.com/growingio/react-native-growingio.gitnpm installreact-native link react-native-growingio
+```
 
 ### 配置
 
@@ -990,76 +381,50 @@ Libraries中添加libGrowingIORNPlugin.a
 添加初始化函数: 在 AppDelegate 中引入\#import
 \"Growing.h\"并添加启动方法
 
-+----------------------------------------------------------------+
-| \- (BOOL)application:(UIApplication \*)application             |
-|                                                                |
-| didFinishLaunchingWithOptions:(NSDictionary \*)launchOptions { |
-|                                                                |
-| \...                                                           |
-|                                                                |
-| // 启动GrowingIO                                               |
-|                                                                |
-| \[Growing startWithAccountId:@\"项目ID\"\];                    |
-|                                                                |
-| // 其他配置                                                    |
-|                                                                |
-| // 开启Growing调试日志 可以开启日志                            |
-|                                                                |
-| // \[Growing setEnableLog:YES\];                               |
-|                                                                |
-| }                                                              |
-+----------------------------------------------------------------+
+```
+- (BOOL)application:(UIApplication *)application  didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {      ...      // 启动GrowingIO      [Growing startWithAccountId:@"项目ID"];      // 其他配置      // 开启Growing调试日志 可以开启日志      // [Growing setEnableLog:YES];  }
+```
 
--   按照文档2.2.3进行后续配置。
+-   按照文档 ios集成 "在build phases中添加依赖" 进行后续配置。
 
 #### Android
 
 在Application中的onCreate方法中初始化：
 
-+------------------------------------------------------------+
-| GrowingIO.startWithConfiguration(this, new Configuration() |
-|                                                            |
-| .useID()                                                   |
-|                                                            |
-| .trackAllFragments()                                       |
-|                                                            |
-| .setChannel(\"\*\*应用商店\"));                            |
-+------------------------------------------------------------+
-
+```
+  GrowingIO.startWithConfiguration(this, new Configuration()	.useID()	.trackAllFragments()	.setChannel("**应用商店"));
+```
 AndroidManifest.xml以及module级别build.gradle中android defaultConfig
 中添加的属性，请见官网配置。 [添加官网配置](https://docs.growingio.com/sdk-20/sdk-20-api-wen-dang/android-sdk-21-an-zhuang.html)
 
 ###  方法说明
 
-  **方法名**          **参数**                                                               **说明**
-  ------------------- ---------------------------------------------------------------------- --------------------------
-  track               (String eventId, Object eventLevelVariable(optional))                  自定义事件（计数器类型）
-  trackWithNumber     (String eventId, Number number, Object eventLevelVariable(optional))   自定义事件（数值类型）
-  page                (String page)                                                          页面浏览事件
-  setUserId           (String userId)                                                        设置登录用户ID
-  clearUserId                                                                                清除登录用户ID
-  setPageVariable     (String page, Object pageLevelVariables)                               设置页面级变量
-  setEvar             (Object conversionVariables)                                           设置转化变量
-  setPeopleVariable   (Object peopleVariables)                                               设置用户变量
+| 方法名 | 参数 | 说明 |
+| -- | -- | -- |
+| track | (String eventId, Object eventLevelVariable(optional)) | 自定义事件（计数器类型） |
+| trackWithNumber | (String eventId, Number number, Object eventLevelVariable(optional)) | 自定义事件（数值类型） |
+| page | (String page) | 页面浏览事件 |
+| setUserId | (String userId) | 设置登录用户ID |
+| clearUserId |  | 清除登录用户ID |
+| setPageVariable | (String page, Object pageLevelVariables) | 设置页面级变量 |
+| setEvar | (Object conversionVariables) | 设置转化变量 |
+| setPeopleVariable | (Object peopleVariables) | 设置用户变量 |
+
 
 ### JS中调用方式
 
 在定义Component之前引入
 
-+--------------------------+
-| import {                 |
-|                          |
-| NativeModules            |
-|                          |
-| } from \'react-native\'; |
-+--------------------------+
+```
+import {    NativeModules} from 'react-native';
+```
 
 之后就可以使用GrowingIO的方法,例如在js中调用自定义事件方法：
 
-  ----------------------------------------------------------------------------
-  NativeModules.GrowingIO.track(\"registerSuccess\", {\"gender\":\"male\"});
-  ----------------------------------------------------------------------------
-
+ ```
+ NativeModules.GrowingIO.track("registerSuccess", {"gender":"male"});
+ ```
+ 
 ### Tips
 
 由于最新的ReactNative
@@ -1067,29 +432,19 @@ AndroidManifest.xml以及module级别build.gradle中android defaultConfig
 
 在工程目录下
 
-  --------------------------
-  mkdir Android/app/assets
-  --------------------------
+mkdir Android/app/assets
 
 在app build.gradle android中添加：
 
-+---------------------------------+
-| sourceSets {                    |
-|                                 |
-| main {                          |
-|                                 |
-| assets.srcDirs = \[\'assets\'\] |
-|                                 |
-| }                               |
-|                                 |
-| }                               |
-+---------------------------------+
+```
+sourceSets {     main {         assets.srcDirs = ['assets']     } }
+```
 
 在工程目录下：
 
-  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  react-native bundle \--platform android \--dev false \--entry-file App.js \--bundle-output android/app/assets/index.android.bundle \--assets-dest android/app/src/main/res/
-  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+```
+react-native bundle --platform android --dev false --entry-file App.js --bundle-output android/app/assets/index.android.bundle  --assets-dest android/app/src/main/res/
+```
 
 demo 可见
 https://github.com/growingio/react-native-growingio/examples/App.js
@@ -1138,14 +493,14 @@ height="3.061111111111111in"}
 上传登陆用户ID
 ==============
 
-为了在UDG后台看到登陆用户的相关趋势和指标，需要上传用户的登陆ID。
+为了在GrowingIO后台看到登陆用户的相关趋势和指标，需要上传用户的登陆ID。
 
-注意：如果您的应用是互联网应用，且已对接用户中心，上传的用户ID必须是用户中心统一的登录ID，如果需要上传自己应用的用户ID及其他业务数据，可以按照需求进行对应变量的上传。（根据业务需求进行埋点可与系统负责人陆梦飞、刘钊联系）
+注意：如果您的应用是互联网应用，且已对接用户中心，上传的用户ID必须是用户中心统一的登录ID，如果需要上传自己应用的用户ID及其他业务数据，可以按照需求进行对应变量的上传。（根据业务需求进行埋点可与项目负责人联系）
 
 后台配置
 --------
 
-1.在UDG 后台导航栏中找到"打点管理"功能
+1.在GrowingIO 后台导航栏中找到"打点管理"功能
 
 ![](media/image18.png){width="6.339583333333334in"
 height="1.5868055555555556in"}
@@ -1164,59 +519,27 @@ height="2.2055555555555557in"}
 
 参数（注意大小写）：
 
-  **参数名称**   **参数类型**   **是否必须**   **说明**
-  -------------- -------------- -------------- ------------------
-  userId         String         是             用户的登录用户ID
+| 参数名称 | 参数类型 | 是否必须 | 说明 |
+| -- | -- | -- | -- |
+| userId | String | 是 | 用户的登录用户ID
+
 
 ### Web端
 
-//setUserId API原型
-
-gio(\'setUserId\', userId);
-
-//setuserId API调用示例
-
-gio(\'setUserId\', \'1234567890\');
-
-//clearUserId API原型和调用示例
-
-gio(\'clearUserId\');
+```
+//setUserId API原型gio('setUserId', userId);//setuserId API调用示例gio('setUserId', '1234567890');//clearUserId API原型和调用示例gio('clearUserId');
+```
 
 ### Android端
 
-// setUserId API原型
-
-GrowingIO.getInstance().setUserId(String userId);
-
-// setuserId API调用示例
-
-GrowingIO.getInstance().setUserId(String \"1234567890\");
-
-// clearUserId API原型
-
-GrowingIO.getInstance().clearUserId();
-
-// clearUserId API调用示例
-
-GrowingIO.getInstance().clearUserId();
-
+```
+// setUserId API原型GrowingIO.getInstance().setUserId(String userId);// setuserId API调用示例GrowingIO.getInstance().setUserId(String "1234567890");// clearUserId API原型GrowingIO.getInstance().clearUserId();// clearUserId API调用示例GrowingIO.getInstance().clearUserId();
+```
 ### IOS 端
 
-// setUserId API原型
-
-\+ (void)setUserId:(NSString \*)userId;
-
-// setuserId API调用示例
-
-\[Growing setUserId:@\"1234567890\"\];
-
-// clearUserId API原型
-
-\+ (void)clearUserId;
-
-// clearUserId API调用示例
-
-\[Growing clearUserId\];
+```
+// setUserId API原型+ (void)setUserId:(NSString *)userId;// setuserId API调用示例[Growing setUserId:@"1234567890"];// clearUserId API原型+ (void)clearUserId;// clearUserId API调用示例[Growing clearUserId];
+```
 
 在图表中验证数据有效性
 ----------------------
