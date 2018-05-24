@@ -6,11 +6,10 @@ react-native-growingio 用于RN开发者手动发送数据。
 
 ### **引入** {#-0}
 
-npm install --save https://github.com/growingio/react-native-growingio.git
+```
+npm install --save https://github.com/growingio/react-native-growingio.gitnpm installreact-native link react-native-growingio
+```
 
-npm install
-
-react-native link react-native-growingio
 
 ### **配置** {#-1}
 
@@ -26,19 +25,23 @@ c.在工程Build Phases ➜ Link Binary With Libraries中添加libGrowingIORNPlu
 
 添加初始化函数: 在 AppDelegate 中引入#import &quot;Growing.h&quot;并添加启动方法
 
-| - (BOOL)application:(UIApplication *)application |
-| --- |
 
-*   按照文档2.2.3进行后续配置。
+```
+- (BOOL)application:(UIApplication *)application  didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {      ...      // 启动GrowingIO      [Growing startWithAccountId:@"项目ID"];      // 其他配置      // 开启Growing调试日志 可以开启日志      // [Growing setEnableLog:YES];  }
+```
+-   按照文档 ios集成 "在build phases中添加依赖" 进行后续配置。
+
 
 #### **Android** {#android}
 
 在Application中的onCreate方法中初始化：
 
-| GrowingIO.startWithConfiguration(this, new Configuration() |
-| --- |
+```
+  GrowingIO.startWithConfiguration(this, new Configuration()	.useID()	.trackAllFragments()	.setChannel("**应用商店"));
+```
 
-AndroidManifest.xml以及module级别build.gradle中android defaultConfig 中添加的属性，请见官网配置。 添加官网配置
+
+AndroidManifest.xml以及module级别build.gradle中android defaultConfig 中添加的属性，请见官网配置。  [添加官网配置](https://docs.growingio.com/sdk-20/sdk-20-api-wen-dang/android-sdk-21-an-zhuang.html)
 
 ### **方法说明** {#-2}
 
@@ -57,13 +60,15 @@ AndroidManifest.xml以及module级别build.gradle中android defaultConfig 中添
 
 在定义Component之前引入
 
-| import { |
-| --- |
+```
+import {    NativeModules} from 'react-native';
+```
 
 之后就可以使用GrowingIO的方法,例如在js中调用自定义事件方法：
 
-| NativeModules.GrowingIO.track(&quot;registerSuccess&quot;, {&quot;gender&quot;:&quot;male&quot;}); |
-| --- |
+ ```
+ NativeModules.GrowingIO.track("registerSuccess", {"gender":"male"});
+ ```
 
 ### Tips {#tips}
 
@@ -71,17 +76,21 @@ AndroidManifest.xml以及module级别build.gradle中android defaultConfig 中添
 
 在工程目录下
 
-| mkdir Android/app/assets |
-| --- |
+```
+mkdir Android/app/assets
+```
 
 在app build.gradle android中添加：
 
-| sourceSets { |
-| --- |
+```
+sourceSets {     main {         assets.srcDirs = ['assets']     } }
+```
 
 在工程目录下：
 
-| react-native bundle --platform android --dev false --entry-file App.js --bundle-output android/app/assets/index.android.bundle --assets-dest android/app/src/main/res/ |
-| --- |
+
+```
+react-native bundle --platform android --dev false --entry-file App.js --bundle-output android/app/assets/index.android.bundle  --assets-dest android/app/src/main/res/
+```
 
 demo 可见 https://github.com/growingio/react-native-growingio/examples/App.js

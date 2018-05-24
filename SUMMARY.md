@@ -1,6 +1,6 @@
 # Summary
 
-* [2018-5-2用户中心UDG平台SDK对接文档](README.md)
+* [GrowingIO 私有化SDK集成手册](README.md)
 * [获取项目ID和URL Scheme](huo_qu_xiang_mu_id_he_url_scheme/README.md)
   * [添加应用](huo_qu_xiang_mu_id_he_url_scheme/tian_jia_ying_yong.md)
   * [获取项目ID和URL Scheme](huo_qu_xiang_mu_id_he_url_scheme/huo_qu_xiang_mu_id_he_url_scheme.md)

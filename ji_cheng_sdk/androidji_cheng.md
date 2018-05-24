@@ -4,99 +4,20 @@
 
 在 project 级别的 build.gradle 文件中添加 vds-gradle-plugin 依赖：
 
-buildscript {
-
-repositories {
-
-jcenter()
-
-}
-
-dependencies {
-
-classpath &#039;com.android.tools.build:gradle:3.0.1&#039;
-
-classpath &#039;com.growingio.android:vds-gradle-plugin:OP-2.3.1&#039;
-
-//2018-05-02升级，升级前版本为2.0.7
-
-// NOTE: Do not place your application dependencies here; they belong
-
-// in the individual module build.gradle files
-
-}
-
-}
+```
+    buildscript {            repositories {                jcenter()            }            dependencies {                classpath 'com.android.tools.build:gradle:3.0.1'                classpath 'com.growingio.android:vds-gradle-plugin:OP-2.3.1'//2018-05-02升级，升级前版本为2.0.7                // NOTE: Do not place your application dependencies here; they belong                // in the individual module build.gradle files            }    }
+```
 
 ### **添加插件、依赖和对应资源**
 
 在 module 级别的 build.gradle 文件中添加 com.growingio.android 插件、vds-android-agent 依赖和对应的资源：
 
-apply plugin: &#039;com.android.application&#039;
 
-apply plugin: &#039;com.growingio.android&#039;
-
-android {
-
-compileSdkVersion 26
-
-buildToolsVersion &quot;26.0.0&quot;
-
-defaultConfig {
-
-applicationId &quot;com.example.wenke.gioeesdkandroiddemo&quot;
-
-minSdkVersion 15
-
-targetSdkVersion 26
-
-versionCode 1
-
-versionName &quot;1.0&quot;
-
-testInstrumentationRunner &quot;android.support.test.runner.AndroidJUnitRunner&quot;
-
-resValue(&quot;string&quot;, &quot;growingio_project_id&quot;, &quot;96a848cc38c178cd&quot;)
-
-resValue(&quot;string&quot;, &quot;growingio_url_scheme&quot;, &quot;growing.34b72609d4551902&quot;)
-
-}//更改为对应的项目ID和URL scheme
-
-buildTypes {
-
-release {
-
-minifyEnabled false
-
-proguardFiles getDefaultProguardFile(&#039;proguard-android.txt&#039;), &#039;proguard-rules.pro&#039;
-
-}
-
-}
-
-}
-
-dependencies {
-
-compile fileTree(dir: &#039;libs&#039;, include: [&#039;*.jar&#039;])
-
-androidTestCompile(&#039;com.android.support.test.espresso:espresso-core:2.2.2&#039;, {
-
-exclude group: &#039;com.android.support&#039;, module: &#039;support-annotations&#039;
-
-})
-
-compile &#039;com.android.support:appcompat-v7:26.+&#039;
-
-compile &#039;com.android.support.constraint:constraint-layout:1.0.2&#039;
-
-testCompile &#039;junit:junit:4.12&#039;
-
-compile &#039;com.growingio.android:vds-android-agent:OP-2.3.1@aar&#039;
-
-//更新前：compile &#039;com.growingio.android:vds-android-agent:OP-2.0.7@aar&#039;
-
-}
+```
+apply plugin: 'com.android.application'apply plugin: 'com.growingio.android'android {    compileSdkVersion 26    buildToolsVersion "26.0.0"    defaultConfig {        applicationId "com.example.wenke.gioeesdkandroiddemo"        minSdkVersion 15        targetSdkVersion 26        versionCode 1        versionName "1.0"        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"        resValue("string", "growingio_project_id", "96a848cc38c178cd")        resValue("string", "growingio_url_scheme", "growing.34b72609d4551902")    }//更改为对应的项目ID和URL scheme    buildTypes {        release {            minifyEnabled false            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'        }    }}dependencies {    compile fileTree(dir: 'libs', include: ['*.jar'])    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {        exclude group: 'com.android.support', module: 'support-annotations'    })    compile 'com.android.support:appcompat-v7:26.+'    compile 'com.android.support.constraint:constraint-layout:1.0.2'testCompile 'junit:junit:4.12'	compile 'com.growingio.android:vds-android-agent:OP-2.3.1@aar'
+	
+	//更新前：compile 'com.growingio.android:vds-android-agent:OP-2.0.7@aar'}
+```
 
 *   确保URL scheme、项目ID和 SDK的版本准确。
 
@@ -104,59 +25,9 @@ compile &#039;com.growingio.android:vds-android-agent:OP-2.3.1@aar&#039;
 
 把URL Scheme添加到您的项目，以便我们唤醒您的程序，进行圈选。将该产品的URLScheme添加到你的AndroidManifest.xml中的LAUNCHER Activity下。例如
 
-&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-
-&lt;manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot; package=&quot;com.example.wenke.gioeesdkandroiddemo&quot;&gt;
-
-&lt;uses-permission android:name=&quot;android.permission.SYSTEM_ALERT_WINDOW&quot;/&gt;
-
-&lt;uses-permission android:name=&quot;android.permission.INTERNET&quot;/&gt;
-
-&lt;uses-permission android:name=&quot;android.permission.ACCESS_NETWORK_STATE&quot;/&gt;
-
-&lt;application
-
-android:name=&quot;.App&quot;
-
-android:allowBackup=&quot;true&quot;
-
-android:icon=&quot;@mipmap/ic_launcher&quot;
-
-android:label=&quot;@string/app_name&quot;
-
-android:roundIcon=&quot;@mipmap/ic_launcher_round&quot;
-
-android:supportsRtl=&quot;true&quot;
-
-android:theme=&quot;@style/AppTheme&quot;&gt;
-
-&lt;activity android:name=&quot;.MainActivity&quot;&gt;
-
-&lt;intent-filter&gt;
-
-&lt;action android:name=&quot;android.intent.action.MAIN&quot; /&gt;
-
-&lt;category android:name=&quot;android.intent.category.LAUNCHER&quot; /&gt;
-
-&lt;/intent-filter&gt;
-
-&lt;intent-filter&gt;
-
-&lt;data android:scheme=&quot;growing.a62ec2138e951a64&quot;/&gt;//改为对应项目的URL scheme
-
-&lt;action android:name=&quot;android.intent.action.VIEW&quot;/&gt;
-
-&lt;category android:name=&quot;android.intent.category.DEFAULT&quot;/&gt;
-
-&lt;category android:name=&quot;android.intent.category.BROWSABLE&quot;/&gt;
-
-&lt;/intent-filter&gt;
-
-&lt;/activity&gt;
-
-&lt;/application&gt;
-
-&lt;/manifest&gt;
+```
+<?xml version="1.0" encoding="utf-8"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.example.wenke.gioeesdkandroiddemo"><uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/><uses-permission android:name="android.permission.INTERNET"/><uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/><application    android:name=".App"    android:allowBackup="true"    android:icon="@mipmap/ic_launcher"    android:label="@string/app_name"    android:roundIcon="@mipmap/ic_launcher_round"    android:supportsRtl="true"    android:theme="@style/AppTheme">    <activity android:name=".MainActivity">        <intent-filter>            <action android:name="android.intent.action.MAIN" />            <category android:name="android.intent.category.LAUNCHER" />        </intent-filter>        <intent-filter>            <data android:scheme="growing.a62ec2138e951a64"/>//改为对应项目的URL scheme            <action android:name="android.intent.action.VIEW"/>            <category android:name="android.intent.category.DEFAULT"/>            <category android:name="android.intent.category.BROWSABLE"/>        </intent-filter>    </activity></application></manifest>
+```
 
 *   请添加一整个 intent-filter 区块，并确保其中只有一个 data 字段
 *   确保URL scheme准确
@@ -165,159 +36,24 @@ android:theme=&quot;@style/AppTheme&quot;&gt;
 
 在app.java中添加以下代码：
 
-package com.example.wenke.gioeesdkandroiddemo;
-
-import android.app.Application;
-
-import com.growingio.android.sdk.collection.Configuration;
-
-import com.growingio.android.sdk.collection.GConfig;
-
-import com.growingio.android.sdk.collection.GrowingIO;
-
-import com.growingio.android.sdk.utils.LogUtil;
-
-/**
-
-* Created by wenke on 2017/12/8.
-
-*/
-
-public class App extends Application {
-
-@Override
-
-public void onCreate() {
-
-super.onCreate();
-
-GrowingIO.startWithConfiguration(this, new Configuration()
-
-// .setDisableImpression(true)
-
-.useID()
-
-.trackAllFragments()
-
-.setTestMode(true)
-
-.setDebugMode(true)
-
-.setChannel(&quot;optest&quot;)
-
-.setTrackerHost(&quot;https://vds.haier.net&quot;) // marathon external_lb
-
-.setDataHost(&quot;https://udg.haier.net&quot;)
-
-.setGtaHost(&quot;https://gta.haier.net&quot;)
-
-.setHybridJSSDKUrlPrefix(&quot;https://assets.growingio.com/sdk/hybrid&quot;)
-
-);
-
-LogUtil.i(&quot;GIO&quot;, &quot;APP &quot;);
-
-}
-
-}
+```
+package com.example.wenke.gioeesdkandroiddemo;import android.app.Application;import com.growingio.android.sdk.collection.Configuration;import com.growingio.android.sdk.collection.GConfig;import com.growingio.android.sdk.collection.GrowingIO;import com.growingio.android.sdk.utils.LogUtil;/*** Created by wenke on 2017/12/8.*/public class App extends Application {@Overridepublic void onCreate() {    super.onCreate();    GrowingIO.startWithConfiguration(this, new Configuration()//                .setDisableImpression(true)            .useID()            .trackAllFragments()            .setTestMode(true)            .setDebugMode(true)            .setChannel("optest")            .setTrackerHost("https://vds.growingio.com")  // vds域名            .setDataHost("https://gio.growingio.com") // 前端主域名            .setGtaHost("https://gta.growingio.com")  //gta域名            .setHybridJSSDKUrlPrefix("https://assets.growingio.com/sdk/hybrid")    );    LogUtil.i("GIO", "APP ");}}
+```
 
 ### **修改MainActivity.java文件** {#mainactivity-java}
 
 在MainActivity.java中添加以下代码：
 
-package com.example.wenke.gioeesdkandroiddemo;
-
-import android.support.v7.app.AppCompatActivity;
-
-import android.os.Bundle;
-
-import android.util.Log;
-
-import android.view.View;
-
-import android.widget.Button;
-
-import android.widget.Toast;
-
-public class MainActivity extends AppCompatActivity {
-
-@Override
-
-protected void onCreate(Bundle savedInstanceState) {
-
-super.onCreate(savedInstanceState);
-
-setContentView(R.layout.activity_main);
-
-Button button1 = (Button) findViewById(R.id.button1);
-
-button1.setOnClickListener(new View.OnClickListener() {
-
-@Override
-
-public void onClick(View view) {
-
-Log.d(&quot;click&quot;,&quot;点击了button1&quot;);
-
-Toast.makeText(MainActivity.this, &quot;click button1&quot;, Toast.LENGTH_SHORT).show();
-
-}
-
-});
-
-}
-
-}
-
+```
+package com.example.wenke.gioeesdkandroiddemo;import android.support.v7.app.AppCompatActivity;import android.os.Bundle;import android.util.Log;import android.view.View;import android.widget.Button;import android.widget.Toast;public class MainActivity extends AppCompatActivity {    @Override    protected void onCreate(Bundle savedInstanceState) {        super.onCreate(savedInstanceState);        setContentView(R.layout.activity_main);        Button button1 = (Button) findViewById(R.id.button1);        button1.setOnClickListener(new View.OnClickListener() {            @Override            public void onClick(View view) {                Log.d("click","点击了button1");                Toast.makeText(MainActivity.this, "click button1", Toast.LENGTH_SHORT).show();            }        });    }
+```
 ### **代码混淆** {#-0}
 
 如果你启用了混淆，请在你的proguard-rules.pro中加入如下代码：
 
--keep class com.growingio.android.sdk.** {
-
-*;
-
-}
-
--dontwarn com.growingio.android.sdk.**
-
--keepnames class * extends android.view.View
-
--keep class * extends android.app.Fragment {
-
-public void setUserVisibleHint(boolean);
-
-public void onHiddenChanged(boolean);
-
-public void onResume();
-
-public void onPause();
-
-}
-
--keep class android.support.v4.app.Fragment {
-
-public void setUserVisibleHint(boolean);
-
-public void onHiddenChanged(boolean);
-
-public void onResume();
-
-public void onPause();
-
-}
-
--keep class * extends android.support.v4.app.Fragment {
-
-public void setUserVisibleHint(boolean);
-
-public void onHiddenChanged(boolean);
-
-public void onResume();
-
-public void onPause();
-
-}
+```
+-keep class com.growingio.android.sdk.** {    *;}-dontwarn com.growingio.android.sdk.**-keepnames class * extends android.view.View-keep class * extends android.app.Fragment {    public void setUserVisibleHint(boolean);    public void onHiddenChanged(boolean);    public void onResume();    public void onPause();}-keep class android.support.v4.app.Fragment {    public void setUserVisibleHint(boolean);    public void onHiddenChanged(boolean);    public void onResume();    public void onPause();}-keep class * extends android.support.v4.app.Fragment {    public void setUserVisibleHint(boolean);    public void onHiddenChanged(boolean);    public void onResume();    public void onPause();}
+```
 
 ### **重要配置项** {#-1}
 
