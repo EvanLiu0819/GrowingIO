@@ -26,3 +26,5 @@
 ```
 // setUserId API原型+ (void)setUserId:(NSString *)userId;// setuserId API调用示例[Growing setUserId:@"1234567890"];// clearUserId API原型+ (void)clearUserId;// clearUserId API调用示例[Growing clearUserId];
 ```
+
+

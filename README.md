@@ -14,3 +14,6 @@
 | gta.growingio.com | 网关域名，用于连接后端服务资源的域名 | 443 | https |
 | short.growingio.com | 短链域名，短链接服务，将长链接域名转换为短链接 | 443 | https |
 | vds.growingio.com | vds域名，后端数据采集的上传途径 | 443 | https |
+
+## 更新记录
+| 更新内容 | 更新人 | 日期 |
