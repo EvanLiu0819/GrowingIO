@@ -16,11 +16,9 @@
 
 ![](/images/ios_jicheng/tianjiayilai_2.png)
 
-
-
 ### **添加编译参数**
 
-### ![](/images/ios_jicheng/tianjiabianyicanshu.png) {#appdelegate-m}
+### ![](/images/ios_jicheng/tianjiabianyicanshu.png)
 
 ### **在AppDelegate.m添加集成代码** {#appdelegate-m}
 
@@ -42,8 +40,6 @@
 ### **添加URL scheme** {#url-scheme}
 
 ![](/images/ios_jicheng/tianjia_scheme.png)
-
-
 
 ### **添加激活圈选代码** {#-0}
 
