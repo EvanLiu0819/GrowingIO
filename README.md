@@ -44,6 +44,8 @@
 
 ![](/images/huoquxiangmuid/mobile_ai.png)
 
+# 集成SDK
+
 ## 网站集成
 
 ### **代码集成** {#-0}
@@ -80,8 +82,6 @@
 将服务器端配置修改成X-Frame-Options: Allow-From [http://gio.growingio.com，\](http://gio.growingio.com，\)  
 如果您的网站是 https ，请使用X-Frame-Options: Allow-From  
 [https://gio.growingio.com](https://gio.growingio.com) 。
-
-
 
 ## IOS集成 {#ios}
 
