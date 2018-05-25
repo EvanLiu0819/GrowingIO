@@ -669,6 +669,38 @@ react-native bundle --platform android --dev false --entry-file App.js --bundle-
 
 demo 可见 [https://github.com/growingio/react-native-growingio/examples/App.js\#](https://github.com/growingio/react-native-growingio/examples/App.js)
 
+# 检测数据
+
+## 检测SDK安装状态 {#sdk}
+
+SDK安装成功后，点击“去检测SDK安装状态”按钮
+
+![](/images/jianceshuju/jiancesdkzhuangtai.png)
+
+## 完成安装
+
+选择与您的应用具有相同URL或包名的一项，点击“完成安装“
+
+![](/images/jianceshuju/wanchenganzhuang.png)
+
+## 查看数据
+
+SDK安装成功后，数据会在一小时后更新，在概览页面即可进行全局指标的查看
+
+![](/images/jianceshuju/chakanshuju.png)
+
+![](/images/jianceshuju/chakanshuju_dashboard.png)
+
+## 验证是否能够正常圈选
+
+在系统中点击圈选，选择刚刚添加的应用，在地址栏输入集成SDK的系统地址，显示绿色的SDK标志，代表该页面集成SDK成功，且已经能够正常完成圈选。
+
+![](/images/jianceshuju/yanzhengshuju_1.png)
+
+如果显示红色标志，代表该页面成功集成SDK，按照提示内容进行问题排查，排查后仍未解决，可联系系统负责人。
+
+![](/images/jianceshuju/yanzhengshuju_2.png)
+
 # 上传登陆用户ID {#id}
 
 为了在GrowingIO 后台看到登陆用户的相关趋势和指标，需要上传用户的登陆ID。
