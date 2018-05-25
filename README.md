@@ -378,9 +378,13 @@ GrowingIO.getInstance\(\).trackBanner\(banner, bannerDescriptions\)
 
 其中 bannerDescriptions 是 List&lt;String&gt;类型，包含所有广告图对应的广告内容描述，内容描述需要跟广告的顺序相同。
 
-例如，当您有 5 张广告图时，只需创建一个 String 类型的 List，然后按 5 个广告出现的顺序给 List 的元素设置对应的广告描述，同样设置 5 个元素即可。\#\# IOS cordova 集成 {\#ios-cordova}
+例如，当您有 5 张广告图时，只需创建一个 String 类型的 List，然后按 5 个广告出现的顺序给 List 的元素设置对应的广告描述，同样设置 5 个元素即可。
 
-ios cordova集成参照ios的集成方式\#\# Android cordova 集成 {\#android-cordova}
+## IOS cordova 集成 {#ios-cordova}
+
+ios cordova集成参照ios的集成方式
+
+## Android cordova 集成 {#android-cordova}
 
 ### **添加cordova插件** {#cordova}
 
