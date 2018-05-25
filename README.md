@@ -83,7 +83,7 @@
 
 
 
-\#\# IOS集成 {\#ios}
+## IOS集成 {#ios}
 
 ### **准备最新IOS SDK** {#ios-sdk}
 
