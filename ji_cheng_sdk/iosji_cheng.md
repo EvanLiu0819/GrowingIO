@@ -17,11 +17,12 @@
 ![](/images/ios_jicheng/tianjiayilai_2.png)
 
 
+
+
+
 ### **添加编译参数**
 
 ![](/images/ios_jicheng/tianjiabianyicanshu.png)
-
-
 
 ### **在AppDelegate.m添加集成代码** {#appdelegate-m}
 
