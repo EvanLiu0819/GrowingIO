@@ -24,6 +24,8 @@
 
 ![](/images/ios_jicheng/tianjiabianyicanshu.png)
 
+
+
 ### **在AppDelegate.m添加集成代码** {#appdelegate-m}
 
 ```
