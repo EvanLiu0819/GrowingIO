@@ -667,7 +667,9 @@ sourceSets {
 react-native bundle --platform android --dev false --entry-file App.js --bundle-output android/app/assets/index.android.bundle  --assets-dest android/app/src/main/res/
 ```
 
-demo 可见 [https://github.com/growingio/react-native-growingio/examples/App.js\#](https://github.com/growingio/react-native-growingio/examples/App.js#) 上传登陆用户ID {\#id}
+demo 可见 [https://github.com/growingio/react-native-growingio/examples/App.js\#](https://github.com/growingio/react-native-growingio/examples/App.js)
+
+# 上传登陆用户ID {#id}
 
 为了在GrowingIO 后台看到登陆用户的相关趋势和指标，需要上传用户的登陆ID。
 
