@@ -81,6 +81,8 @@
 如果您的网站是 https ，请使用X-Frame-Options: Allow-From  
 [https://gio.growingio.com](https://gio.growingio.com) 。\#\# IOS集成 {\#ios}
 
+## IOS集成 {#ios}
+
 ### **准备最新IOS SDK** {#ios-sdk}
 
 点击下载[_iOS SDK_](http://assets.growingio.com/sdk/GrowingIO-iOS-SDK-2.3.1.zip)
