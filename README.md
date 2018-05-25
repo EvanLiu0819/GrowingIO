@@ -367,4 +367,66 @@ sourceSets {     main {         assets.srcDirs = ['assets']     } }
 react-native bundle --platform android --dev false --entry-file App.js --bundle-output android/app/assets/index.android.bundle  --assets-dest android/app/src/main/res/
 ```
 
-demo 可见 https://github.com/growingio/react-native-growingio/examples/App.js
+demo 可见 https://github.com/growingio/react-native-growingio/examples/App.js# 上传登陆用户ID {#id}
+
+为了在GrowingIO 后台看到登陆用户的相关趋势和指标，需要上传用户的登陆ID。
+
+注意：如果您的应用是互联网应用，且已对接用户中心，上传的用户ID必须是用户中心统一的登录ID，如果需要上传自己应用的用户ID及其他业务数据，可以按照需求进行对应变量的上传。（根据业务需求进行埋点可与系统负责人陆梦飞、刘钊联系）
+## 后台配置
+
+1.在GrowingIO 后台导航栏中找到“打点管理”功能
+
+
+
+![](/images/uploaduser/dadianguanli.png)
+
+2.点击“用户变量”，开启“登陆用户ID”
+
+![](/images/uploaduser/useridon.png)
+
+
+
+
+
+## 代码实施
+
+当用户登录之后调用setUserId API，设置登录用户ID
+
+当用户登出之后调用clearUserId，清除已经设置的登录用户ID。
+
+参数（注意大小写）：
+
+| **参数名称** | **参数类型** | **是否必须** | **说明** |
+| --- | --- | --- | --- |
+| userId | String | 是 | 用户的登录用户ID |
+
+### **Web端** {#web}
+
+```
+//setUserId API原型gio('setUserId', userId);//setuserId API调用示例gio('setUserId', '1234567890');//clearUserId API原型和调用示例gio('clearUserId');
+```
+
+### **Android端** {#android}
+
+```
+// setUserId API原型GrowingIO.getInstance().setUserId(String userId);// setuserId API调用示例GrowingIO.getInstance().setUserId(String "1234567890");// clearUserId API原型GrowingIO.getInstance().clearUserId();// clearUserId API调用示例GrowingIO.getInstance().clearUserId();
+```
+### **IOS 端** {#ios}
+
+```
+// setUserId API原型+ (void)setUserId:(NSString *)userId;// setuserId API调用示例[Growing setUserId:@"1234567890"];// clearUserId API原型+ (void)clearUserId;// clearUserId API调用示例[Growing clearUserId];
+```
+
+
+## 在图表中验证数据有效性
+
+1.在“分析”模块中，选择新建事件分析。
+
+![](/images/uploaduser/shijianfenxi.png)
+
+2.在“指标”下拉菜单选择指标（建议使用全局指标如页面访问量），在“维度”下拉菜单选择登陆用户ID，在右侧表格中看到上传的登陆用户ID，代表上传成功。
+
+![](/images/uploaduser/useridsucess.png)
+
+
+
