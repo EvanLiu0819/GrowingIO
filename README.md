@@ -79,9 +79,11 @@
 
 将服务器端配置修改成X-Frame-Options: Allow-From [http://gio.growingio.com，\](http://gio.growingio.com，\)  
 如果您的网站是 https ，请使用X-Frame-Options: Allow-From  
-[https://gio.growingio.com](https://gio.growingio.com) 。\#\# IOS集成 {\#ios}
+[https://gio.growingio.com](https://gio.growingio.com) 。
 
-## IOS集成 {#ios}
+
+
+\#\# IOS集成 {\#ios}
 
 ### **准备最新IOS SDK** {#ios-sdk}
 
