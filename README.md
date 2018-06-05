@@ -24,7 +24,7 @@
 
 | 更新内容 | 更新人 | 日期 |
 | --- | --- | --- |
-|  |  |  |
+| Android Cordova集成SDK初始化代码中增加.collectWebViewUserAgent\(false\)方法调用已解决Coardova的的crossWebView跟系统WebView‘的兼容性问题。 | Zack | 20180605 |
 
 ## 获取项目ID和URL Scheme {#id-url-scheme}
 
