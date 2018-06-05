@@ -113,6 +113,7 @@ public void onCreate() {
             .setTestMode(true)
             .setDebugMode(true)
             .setChannel("optest")
+            .collectWebViewUserAgent(false) // 解决cordova的crossWebView和系统WebView兼容性问题
             .setTrackerHost("https://vds.growingio.com")  // vds域名
             .setDataHost("https://gio.growingio.com") // 前端主域名
             .setGtaHost("https://gta.growingio.com") // gta域名
