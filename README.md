@@ -20,11 +20,11 @@
 | short.growingio.com | 短链域名，短链接服务，将长链接域名转换为短链接 | 443 | https |
 | vds.growingio.com | vds域名，后端数据采集的上传途径 | 443 | https |
 
-### 更新记录
+### 更新记录\(每次修改必须添加更新记录\)
 
 | 更新内容 | 更新人 | 日期 |
 | --- | --- | --- |
-| Android Cordova集成SDK初始化代码中增加.collectWebViewUserAgent\(false\)方法调用已解决Coardova的的crossWebView跟系统WebView‘的兼容性问题。 | Zack | 20180605 |
+|  |  |  |
 
 ## 获取项目ID和URL Scheme {#id-url-scheme}
 
